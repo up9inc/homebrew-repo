@@ -17,7 +17,7 @@ class Mockintosh < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.x"
+  depends_on "python@3.9"
   depends_on "librdkafka"
 
   # Resources BEGIN
