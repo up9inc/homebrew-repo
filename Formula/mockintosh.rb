@@ -3,8 +3,8 @@ class Mockintosh < Formula
 
   desc "Mockintosh - Service Mocks for Microservices (by UP9.com)"
   homepage "https://mockintosh.io/"
-  # url ""
-  # sha256 ""
+  url "https://files.pythonhosted.org/packages/20/66/3151aec089a21743c02b55d1af9bf4c34ad2cc9bc2bd8619468f329dde6e/mockintosh-0.12.tar.gz"
+  sha256 "7b0d6c8d999309b23adc4f073d10652dd0730fa7c0c1b3a83b1f07e060f18b2d"
   license "MIT"
   head "https://github.com/up9inc/mockintosh.git", branch: "main"
 
@@ -17,14 +17,10 @@ class Mockintosh < Formula
   end
 
   depends_on "rust" => :build
-  depends_on "python@3.9"
+  depends_on "python@3.x"
+  depends_on "librdkafka"
 
   # Resources BEGIN
-  resource "mockintosh" do 
-    url "https://files.pythonhosted.org/packages/20/66/3151aec089a21743c02b55d1af9bf4c34ad2cc9bc2bd8619468f329dde6e/mockintosh-0.12.tar.gz"
-    sha256 "7b0d6c8d999309b23adc4f073d10652dd0730fa7c0c1b3a83b1f07e060f18b2d"
-  end
-
   resource "accept-types" do
     url "https://files.pythonhosted.org/packages/a3/84/6f51d94019411892c9f7fa9d461d4cef06beb35d54cd9944ea19728c4d45/accept-types-0.4.1.tar.gz"
     sha256 "fb27099716d8f0360408c8ca86d69dbfed44455834b70d1506250abe521b535a"
