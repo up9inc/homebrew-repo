@@ -3,20 +3,14 @@ class Mockintosh < Formula
 
   desc "Mockintosh - Service Mocks for Microservices (by UP9.com)"
   homepage "https://mockintosh.io/"
-  url "https://files.pythonhosted.org/packages/20/66/3151aec089a21743c02b55d1af9bf4c34ad2cc9bc2bd8619468f329dde6e/mockintosh-0.12.tar.gz"
-  sha256 "7b0d6c8d999309b23adc4f073d10652dd0730fa7c0c1b3a83b1f07e060f18b2d"
-  license "MIT"
   head "https://github.com/up9inc/mockintosh.git", branch: "main"
+  license "MIT"
 
-  # bottle do
-  #  sha256 cellar: :any,                 arm64_big_sur: "74f43e75579eaac72b2e1edb4ed9916a4b44c382ac0ff7e39a4e9d1c84a85259"
-  #  sha256 cellar: :any,                 big_sur:       "1e5c8fba04e0a590223e5930c1dd7d82b0c5d3886953a6b5509fe589df096d56"
-  #  sha256 cellar: :any,                 catalina:      "ba0af87b32de700c761871864520f5051ad564b61331e6923ad0031174a874a3"
-  #  sha256 cellar: :any,                 mojave:        "2861a7d8cea73f7e60f971ccc2fd820b8fbfe85ad56c48dba1381d36857c61e8"
-  #  sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ca050c502cb7ddadec7ce2ea34bbec2970846ad0531a6387aeda64a00f8efa3"
-  # end
+  # Package BEGIN
+  url "https://files.pythonhosted.org/packages/e0/6b/56805fda4208388c798351dfa24ce2b6f4f6a9eebf3dadc639e954359ba8/mockintosh-0.13.16.tar.gz"
+  sha256 "a606a597c8f6e272a752dca5a9bb744dc2f10a7dcc09f7e6d8d45a0c44a66dfd"
+  # Package END
 
-  depends_on "rust" => :build
   depends_on "python@3.9"
   depends_on "librdkafka"
 
@@ -42,8 +36,8 @@ class Mockintosh < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/e7/4e/2af0238001648ded297fb54ceb425ca26faa15b341b4fac5371d3938666e/charset-normalizer-2.0.4.tar.gz"
-    sha256 "f23667ebe1084be45f6ae0538e4a5a865206544097e4e8bbcacf42cd02a348f3"
+    url "https://files.pythonhosted.org/packages/eb/7f/a6c278746ddbd7094b019b08d1b2187101b1f596f35f81dc27f57d8fcf7c/charset-normalizer-2.0.6.tar.gz"
+    sha256 "5ec46d183433dcbd0ab716f2d7f29d8dee50505b3fdb40c6b985c7c4f5a3591f"
   end
 
   resource "confluent-kafka" do
@@ -52,8 +46,8 @@ class Mockintosh < Formula
   end
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/4f/51/15a4f6b8154d292e130e5e566c730d8ec6c9802563d58760666f1818ba58/decorator-5.0.9.tar.gz"
-    sha256 "72ecfba4320a893c53f9706bebb2d55c270c1e51a28789361aa93e4a21319ed5"
+    url "https://files.pythonhosted.org/packages/92/3c/34f8448b61809968052882b830f7d8d9a8e1c07048f70deb039ae599f73c/decorator-5.1.0.tar.gz"
+    sha256 "e59913af105b9860aa2c8d3272d9de5a56a4e608db9a2f167a8480b323d529a7"
   end
 
   resource "Faker" do
@@ -222,12 +216,13 @@ class Mockintosh < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/4f/5a/597ef5911cb8919efe4d86206aa8b2658616d676a7088f0825ca08bd7cb8/urllib3-1.26.6.tar.gz"
-    sha256 "f57b4c16c62fa2760b7e3d97c35b255512fb6b59a259730f36ba32ce9f8e342f"
+    url "https://files.pythonhosted.org/packages/80/be/3ee43b6c5757cabea19e75b8f46eaf05a2f5144107d7db48c7cf3a864f73/urllib3-1.26.7.tar.gz"
+    sha256 "4987c65554f7a2dbf30c18fd48778ef124af6fab771a377103da0585e2336ece"
   end
   # Resources END
 
   def install
+    virtualenv_create(libexec, "python3")
     virtualenv_install_with_resources
   end
 

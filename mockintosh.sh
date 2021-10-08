@@ -14,7 +14,7 @@ source venv/bin/activate
 # Install the package of interest as well as homebrew-pypi-poet
 pip install homebrew-pypi-poet wheel
 pip install $PACKAGE
-poet $PACKAGE
+poet --formula $PACKAGE
 
 # Destroy the virtual environment
 deactivate
